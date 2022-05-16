@@ -78,7 +78,8 @@ export const AudiogramComposition = () => {
 	}, [handle]);
 
 	// Change this to adjust the part of the audio to use
-	const offset = 2000;
+	// const offset = 2000;
+	const offset = 1050;
 
 	if (!subtitles) {
 		return null;
@@ -87,7 +88,7 @@ export const AudiogramComposition = () => {
 	return (
 		<div ref={ref}>
 			<AbsoluteFill>
-				<Sequence from={-offset}>
+				<Sequence from={0}>
 					<Audio src={audioSource} />
 
 					<div
@@ -100,8 +101,7 @@ export const AudiogramComposition = () => {
 							<Img className="rounded-lg" src={coverImg} />
 
 							<div className="ml-4 leading-tight font-extrabold text-gray-700">
-								#234 – Money, Kids, and Choosing Your Market with Justin Jackson
-								of Transistor.fm
+								#后端开发 – 如何判断一个后端应用是否是无状态，还是有状态的？
 							</div>
 						</div>
 
@@ -115,8 +115,8 @@ export const AudiogramComposition = () => {
 						>
 							<PaginatedSubtitles
 								src={subtitles}
-								startFrame={offset}
-								endFrame={offset + durationInFrames}
+								startFrame={0}
+								endFrame={durationInFrames}
 								linesPerPage={4}
 								renderSubtitleItem={(item, frame) => (
 									<>
